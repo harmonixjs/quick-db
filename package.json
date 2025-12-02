@@ -1,0 +1,60 @@
+{
+  "name": "@harmonixjs/quick-db",
+  "version": "1.0.0",
+  "description": "Quick.db plugin for Harmonix Discord framework - Simple & Flexible",
+  "keywords": [
+    "harmonixjs",
+    "discord",
+    "database",
+    "quick.db",
+    "plugin",
+    "typescript"
+  ],
+  "author": {
+    "name": "Maxence Bessi",
+    "email": "contact@maxence-bessi.com",
+    "url": "https://maxence-bessi.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/harmonixjs/quick-db#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harmonixjs/quick-db.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harmonixjs/quick-db/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@harmonixjs/core": "^1.0.2",
+    "quick.db": "^9.1.7"
+  },
+  "devDependencies": {
+    "@harmonixjs/core": "^1.0.2",
+    "@types/node": "^20.14.0",
+    "quick.db": "^9.1.7",
+    "typescript": "^5.4.0"
+  }
+}
