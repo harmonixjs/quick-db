@@ -64,10 +64,11 @@ export interface Guild {
 ### Create typed tables
 
 ```typescript
+import { DatabasePlugin } from "@harmonixjs/quick-db";
 import { User } from './types';
 
 // Create tables with your types
-const users = bot.database.table('users');
+const users = bot.getPlugin<DatabasePlugin>("database").table('users');
 
 // Everything is typed!
 await users.set('user_123', {
