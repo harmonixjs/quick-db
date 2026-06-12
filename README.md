@@ -14,7 +14,7 @@ npm install @harmonixjs/quick-db quick.db better-sqlite3
 import { Harmonix } from "@harmonixjs/core";
 import { DatabasePlugin } from '@harmonixjs/quick-db';
 
-const bot = new Bot({
+const bot = new Harmonix({
   bot: {
     id: "YOUR_BOT_CLIENT_ID",
     token: "YOUR_BOT_TOKEN"
@@ -32,9 +32,6 @@ const bot = new Bot({
     })
   ]
 });
-
-// OR
-bot.use(new DatabasePlugin({...}))
 
 bot.start();
 ```
@@ -64,11 +61,10 @@ export interface Guild {
 ### Create typed tables
 
 ```typescript
-import { DatabasePlugin } from "@harmonixjs/quick-db";
 import { User } from './types';
 
 // Create tables with your types
-const users = bot.getPlugin<DatabasePlugin>("database").table('users');
+const users = bot.plugins.database.table<User>('users');
 
 // Everything is typed!
 await users.set('user_123', {

@@ -1,6 +1,6 @@
 {
   "name": "@harmonixjs/quick-db",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Quick.db plugin for Harmonix Discord framework - Simple & Flexible",
   "keywords": [
     "harmonixjs",
@@ -48,11 +48,11 @@
     "clean": "rm -rf dist"
   },
   "peerDependencies": {
-    "@harmonixjs/core": "^1.0.2",
+    "@harmonixjs/core": "^2.0.0",
     "quick.db": "^9.1.7"
   },
   "devDependencies": {
-    "@harmonixjs/core": "^1.0.2",
+    "@harmonixjs/core": "file:../core",
     "@types/node": "^20.14.0",
     "quick.db": "^9.1.7",
     "typescript": "^5.4.0"

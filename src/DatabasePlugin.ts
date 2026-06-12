@@ -15,7 +15,7 @@ export interface DatabasePluginConfig {
  */
 export class DatabasePlugin implements HarmonixPlugin {
     /** Name of the plugin */
-    name = 'database';
+    readonly name = 'database' as const;
 
     /** Path to the database file */
     private filePath: string;
@@ -92,5 +92,11 @@ export class DatabasePlugin implements HarmonixPlugin {
      */
     async close(): Promise<void> {
         this.tables.clear();
+    }
+}
+
+declare module '@harmonixjs/core' {
+    interface HarmonixPluginRegistry {
+        database: DatabasePlugin;
     }
 }
